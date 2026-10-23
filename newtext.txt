@@ -1,0 +1,42 @@
+
+import java.util.Scanner;
+
+public class InsuranceSystem {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String name, policyNo;
+        double premium;
+        int dueDays;
+
+        System.out.println("=== INSURANCE POLICY SYSTEM ===");
+
+        System.out.print("Enter Customer Name: ");
+        name = sc.nextLine();
+
+        System.out.print("Enter Policy Number: ");
+        policyNo = sc.nextLine();
+
+        System.out.print("Enter Premium Amount: ");
+        premium = sc.nextDouble();
+
+        System.out.print("Enter Days Left for Due Date: ");
+        dueDays = sc.nextInt();
+
+        System.out.println("\n--- POLICY DETAILS ---");
+        System.out.println("Customer Name : " + name);
+        System.out.println("Policy Number : " + policyNo);
+        System.out.println("Premium Amount: " + premium);
+
+        if (dueDays < 0) {
+            System.out.println("Premium is OVERDUE!");
+        } else if (dueDays <= 5) {
+            System.out.println("Reminder: Premium due in "
+                               + dueDays + " days");
+        } else {
+            System.out.println("Premium payment is not due soon");
+        }
+
+        sc.close();
+    }
+}
